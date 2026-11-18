@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils"
 const FOLDER_RATIO = 340 / 326
 
 export function toFolderFiles(items: FolderItem[]): FolderFile[] {
-  return items.map((f) => ({ name: f.name, meta: f.meta, art: f.art ? art[f.art] : undefined }))
+  return items.map((f) => ({ name: f.name, meta: f.meta, art: f.art ? art[f.art] : undefined, image: f.image }))
 }
 
 export function Services({ dict }: { dict: Dictionary }) {

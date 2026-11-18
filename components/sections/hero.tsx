@@ -7,6 +7,7 @@ import { BookButton } from "@/components/booking/book-button"
 import { useSize } from "@/hooks/use-width"
 import type { Dictionary } from "@/lib/i18n/types"
 import type { ArtName } from "@/lib/art"
+import { media } from "@/lib/media"
 import { sectionIds } from "@/lib/sections"
 
 const TAB_H = 46
@@ -122,7 +123,12 @@ export function Hero({ dict }: { dict: Dictionary }) {
                   className="hero-file relative -ml-4 sm:-ml-6 aspect-[4/5] w-[clamp(78px,13vw,196px)] overflow-hidden rounded-[14px] shadow-[0_18px_40px_-16px_rgb(0_0_0/.8)] ring-1 ring-white/20 first:!ml-0 md:-ml-8 md:rounded-[18px]"
                   style={{ "--i": i } as React.CSSProperties}
                 >
-                  <ArtCanvas art={f.art} seed={f.seed} width={240} height={300} />
+                  {media.hero[i] ? (
+                    // eslint-disable-next-line @next/next/no-img-element -- static export, pre-sized webp
+                    <img src={media.hero[i]} alt="" width={480} height={600} decoding="async" className="size-full object-cover" />
+                  ) : (
+                    <ArtCanvas art={f.art} seed={f.seed} width={240} height={300} />
+                  )}
                   <span className="absolute inset-x-0 top-0 flex items-center gap-1.5 bg-gradient-to-b from-black/55 to-transparent px-2.5 pt-2 pb-5 text-[0.6875rem] font-semibold text-white md:text-[0.8125rem]">
                     <f.Icon className="size-[1.15em]" aria-hidden="true" />
                     {h.files[i]}

@@ -1,3 +1,4 @@
+import { media } from "@/lib/media"
 import type { Dictionary } from "./types"
 
 /**
@@ -86,6 +87,7 @@ export const en: Dictionary = {
             name: "Photography",
             meta: "Shoot",
             art: "plum",
+            image: media.fitness.rest,
             detail: "Photo shoots of your products, your space and your team, with lighting and styling that fit your brand.",
           },
           {
@@ -158,12 +160,14 @@ export const en: Dictionary = {
       {
         id: "gym",
         client: "Strength Studio",
-        sector: "Gym",
+        sector: "Fitness studio",
         art: "cobalt",
+        image: media.fitness.cover,
         summary: "A content strategy that filled the morning classes.",
         files: [
-          { name: "Technique series", meta: "Reels", art: "cobalt", detail: "A weekly technique series with the studio's coaches." },
-          { name: "Team stories", meta: "Stories", art: "plum", detail: "Daily behind-the-scenes stories from the studio to build trust." },
+          { name: "The community", meta: "Photo", image: media.fitness.duo, detail: "Portraits of members mid-class: nothing convinces someone to try a studio like seeing people like them having a good time." },
+          { name: "The coach", meta: "Photo", image: media.fitness.trainer, detail: "The coach in the middle of a class, in the studio's own light, so you know who you'll meet before you walk in." },
+          { name: "The cool-down", meta: "Photo", image: media.fitness.rest, detail: "The quiet moment at the end of a session: the studio isn't only hard work, and that's worth showing too." },
           { name: "Results", meta: "60 days", detail: "Trial classes booked from Instagram and attendance at the morning classes." },
         ],
         metrics: [

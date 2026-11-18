@@ -1,3 +1,4 @@
+import { media } from "@/lib/media"
 import type { Dictionary } from "./types"
 
 /**
@@ -86,6 +87,7 @@ export const es: Dictionary = {
             name: "Fotografía",
             meta: "Sesión",
             art: "plum",
+            image: media.fitness.rest,
             detail: "Sesiones de foto de producto, de tu espacio y de tu equipo, con luz y estilo propios de tu marca.",
           },
           {
@@ -158,12 +160,14 @@ export const es: Dictionary = {
       {
         id: "gym",
         client: "Estudio Fuerza",
-        sector: "Gimnasio",
+        sector: "Estudio de fitness",
         art: "cobalt",
+        image: media.fitness.cover,
         summary: "Una estrategia de contenido que llenó las clases de la mañana.",
         files: [
-          { name: "Serie de técnica", meta: "Reels", art: "cobalt", detail: "Una serie semanal de técnica con los entrenadores del estudio." },
-          { name: "Historias del equipo", meta: "Historias", art: "plum", detail: "Historias diarias del día a día del estudio para generar confianza." },
+          { name: "La comunidad", meta: "Foto", image: media.fitness.duo, detail: "Retratos de las alumnas en clase: lo que más convence a alguien de probar un estudio es ver a gente como ella pasándolo bien." },
+          { name: "La entrenadora", meta: "Foto", image: media.fitness.trainer, detail: "La entrenadora en plena clase, con la luz del estudio, para que sepas a quién te vas a encontrar antes de llegar." },
+          { name: "El cierre", meta: "Foto", image: media.fitness.rest, detail: "El momento de calma al final de la sesión: el estudio no es solo esfuerzo, y eso también hay que contarlo." },
           { name: "Resultados", meta: "60 días", detail: "Clases de prueba reservadas desde Instagram y asistencia a las clases de la mañana." },
         ],
         metrics: [

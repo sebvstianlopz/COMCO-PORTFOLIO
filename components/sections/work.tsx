@@ -82,6 +82,7 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
               meta={study.sector}
               tone="dark"
               art={art[study.art]}
+              image={study.image}
               seed={index * 11 + 5}
               files={files}
               action="none"

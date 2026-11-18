@@ -9,6 +9,8 @@ export type FolderItem = {
   meta: string
   /** Shown as a picture when set; otherwise drawn as a sheet of paper. */
   art?: ArtName
+  /** A photo of COMCO's work (a path from `lib/media.ts`); wins over `art`. */
+  image?: string
   /** What appears under the folder when this file is chosen. */
   detail: string
 }
@@ -30,6 +32,8 @@ export type CaseStudy = {
   client: string
   sector: string
   art: ArtName
+  /** A photo for the folder's back panel; `art` is the fallback. */
+  image?: string
   summary: string
   files: FolderItem[]
   metrics: Metric[]
