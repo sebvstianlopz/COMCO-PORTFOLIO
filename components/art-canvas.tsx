@@ -4,6 +4,7 @@ import * as React from "react"
 import { paint, type ArtRecipe } from "@/components/ui/glass-folder-cards"
 import { art, type ArtName } from "@/lib/art"
 import { cn } from "@/lib/utils"
+import { useNear } from "@/hooks/use-width"
 
 type ArtCanvasProps = {
   art: ArtName | ArtRecipe
@@ -21,10 +22,12 @@ type ArtCanvasProps = {
 export function ArtCanvas({ art: which, seed = 1, width, height, className }: ArtCanvasProps) {
   const ref = React.useRef<HTMLCanvasElement>(null)
   const [ready, setReady] = React.useState(false)
+  const near = useNear(ref as React.RefObject<HTMLElement | null>)
   const recipe = typeof which === "string" ? art[which] : which
   const key = JSON.stringify(recipe)
 
   React.useEffect(() => {
+    if (!near) return
     let live = true
     paint(JSON.parse(key) as ArtRecipe, seed, Math.round(width), Math.round(height), 0).then((src) => {
       const c = ref.current
@@ -37,7 +40,7 @@ export function ArtCanvas({ art: which, seed = 1, width, height, className }: Ar
     return () => {
       live = false
     }
-  }, [key, seed, width, height])
+  }, [near, key, seed, width, height])
 
   return (
     <canvas

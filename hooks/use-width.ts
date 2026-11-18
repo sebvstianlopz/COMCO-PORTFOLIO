@@ -34,3 +34,23 @@ export function useSize<T extends HTMLElement>(): [React.RefObject<T | null>, { 
   }, [])
   return [ref, size]
 }
+
+/** True once the element has come within `margin` of the viewport. Stays true. */
+export function useNear<T extends HTMLElement>(ref: React.RefObject<T | null>, margin = "400px"): boolean {
+  const [near, setNear] = React.useState(false)
+  React.useEffect(() => {
+    const el = ref.current
+    if (!el || near) return
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return
+        io.disconnect()
+        setNear(true)
+      },
+      { rootMargin: `${margin} 0px` },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [ref, margin, near])
+  return near
+}

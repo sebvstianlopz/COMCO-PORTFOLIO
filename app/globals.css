@@ -38,7 +38,8 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.36, 0.5, 1);
+  /* the folders keep their own spring; the site's controls settle without overshoot */
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /*

@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 import GlassFolder from "@/components/ui/glass-folder-cards"
 import { BookButton } from "@/components/booking/book-button"
 import { Reveal } from "@/components/motion/reveal"
-import { useWidth } from "@/hooks/use-width"
+import { useNear, useWidth } from "@/hooks/use-width"
 import { art } from "@/lib/art"
 import type { CaseStudy, Dictionary } from "@/lib/i18n/types"
 import { sectionIds } from "@/lib/sections"
@@ -49,6 +49,7 @@ export function Work({ dict }: { dict: Dictionary }) {
 function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict: Dictionary }) {
   const w = dict.work
   const [ref, width] = useWidth<HTMLDivElement>()
+  const near = useNear(ref, "500px")
   const [open, setOpen] = React.useState(false)
   const [selected, setSelected] = React.useState<number | null>(null)
   const files = React.useMemo(() => toFolderFiles(study.files), [study.files])
@@ -60,7 +61,7 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
     <li className="grid items-center gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-16 lg:gap-24">
       <div className={cn("w-full", flip && "md:order-2")}>
         <div ref={ref} className="relative mx-auto w-full max-w-[420px]" style={{ aspectRatio: FOLDER_RATIO }}>
-          {width ? (
+          {width && near ? (
             <GlassFolder
               label={study.client}
               meta={study.sector}

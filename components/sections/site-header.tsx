@@ -57,7 +57,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
                   href={paths[other]}
                   hrefLang={other}
                   lang={other}
-                  aria-label={nav.switchTo}
+                  aria-label={`${code.toUpperCase()}, ${nav.switchTo}`}
                   className="rounded-full px-2.5 py-1.5 text-ink-soft transition-colors hover:text-ink"
                 >
                   {code.toUpperCase()}

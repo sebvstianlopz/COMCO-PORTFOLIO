@@ -22,8 +22,14 @@ export function buildMetadata(dict: Dictionary): Metadata {
       description: dict.meta.description,
       locale: dict.lang === "es" ? "es_ES" : "en_US",
       alternateLocale: dict.lang === "es" ? "en_US" : "es_ES",
+      images: [{ url: "/og.jpg", width: 1200, height: 630, alt: dict.meta.ogAlt }],
     },
-    twitter: { card: "summary_large_image", title: dict.meta.title, description: dict.meta.description },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: ["/og.jpg"],
+    },
     icons: { icon: "/favicon.ico" },
   }
 }

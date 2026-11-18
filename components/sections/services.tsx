@@ -3,7 +3,7 @@
 import * as React from "react"
 import GlassFolder, { type FolderFile } from "@/components/ui/glass-folder-cards"
 import { BookButton } from "@/components/booking/book-button"
-import { useWidth } from "@/hooks/use-width"
+import { useNear, useWidth } from "@/hooks/use-width"
 import { art } from "@/lib/art"
 import type { Dictionary, FolderItem, Service } from "@/lib/i18n/types"
 import { sectionIds } from "@/lib/sections"
@@ -46,6 +46,7 @@ export function Services({ dict }: { dict: Dictionary }) {
 function ServiceFolder({ service, index, dict }: { service: Service; index: number; dict: Dictionary }) {
   const s = dict.services
   const [ref, width] = useWidth<HTMLDivElement>()
+  const near = useNear(ref, "500px")
   const [open, setOpen] = React.useState(false)
   const [selected, setSelected] = React.useState<number | null>(null)
   const files = React.useMemo(() => toFolderFiles(service.files), [service.files])
@@ -55,7 +56,7 @@ function ServiceFolder({ service, index, dict }: { service: Service; index: numb
   return (
     <li className="flex flex-col">
       <div ref={ref} className="relative mx-auto w-full max-w-[360px]" style={{ aspectRatio: FOLDER_RATIO }}>
-        {width ? (
+        {width && near ? (
           <GlassFolder
             label={service.label}
             meta={service.meta}

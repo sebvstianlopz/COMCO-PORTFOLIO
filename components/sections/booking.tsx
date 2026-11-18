@@ -60,7 +60,7 @@ export function Booking({ dict }: { dict: Dictionary }) {
     >
       <div className="relative overflow-hidden rounded-[30px] bg-[#0b0b10] md:rounded-[40px]">
         <div aria-hidden="true" className="absolute inset-0">
-          <ArtCanvas art="cobalt" seed={12} width={900} height={620} className="scale-110" />
+          <ArtCanvas art="cobalt" seed={12} width={640} height={440} className="scale-110" />
         </div>
         <div className="relative mx-auto grid max-w-[1360px] gap-10 px-3 py-3 md:px-5 md:py-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-5">
           <Reveal className="glass flex flex-col justify-between rounded-[24px] p-7 md:rounded-[32px] md:p-12">

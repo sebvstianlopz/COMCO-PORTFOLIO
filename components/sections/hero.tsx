@@ -54,7 +54,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
   const paintSize = React.useMemo(() => {
     if (!artBox.w) return null
     const portrait = artBox.h > artBox.w
-    return portrait ? { w: 520, h: 860 } : { w: 900, h: 560 }
+    return portrait ? { w: 420, h: 700 } : { w: 720, h: 450 }
   }, [artBox.w, artBox.h])
 
   // The artwork leans away from the pointer, a little.

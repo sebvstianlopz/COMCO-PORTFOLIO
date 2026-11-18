@@ -22,10 +22,10 @@ export function Proof({ dict }: { dict: Dictionary }) {
         <p className="mt-6 text-[0.875rem] text-ink-soft">{p.note}</p>
       </Reveal>
 
-      <dl className="border-t border-white/10">
-        {p.stats.map((s, i) => (
-          <Reveal key={s.label} delay={i * 90}>
-            <div className="flex items-baseline justify-between gap-6 border-b border-white/10 py-6 md:py-7">
+      <Reveal>
+        <dl className="border-t border-white/10">
+          {p.stats.map((s) => (
+            <div key={s.label} className="flex items-baseline justify-between gap-6 border-b border-white/10 py-6 md:py-7">
               <dt className="order-2 max-w-[22ch] text-right text-[0.9375rem] leading-snug text-ink-soft md:text-base">
                 {s.label}
               </dt>
@@ -33,9 +33,9 @@ export function Proof({ dict }: { dict: Dictionary }) {
                 <CountUp stat={s} locale={locale} />
               </dd>
             </div>
-          </Reveal>
-        ))}
-      </dl>
+          ))}
+        </dl>
+      </Reveal>
     </section>
   )
 }
