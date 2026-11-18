@@ -256,3 +256,16 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Section reveal (components/motion/reveal.tsx). Visible unless JS marks it pending. */
+.reveal {
+  transition:
+    opacity 0.9s var(--ease-out-expo) var(--reveal-delay, 0ms),
+    transform 1.1s var(--ease-out-expo) var(--reveal-delay, 0ms),
+    filter 0.9s var(--ease-out-expo) var(--reveal-delay, 0ms);
+}
+.reveal[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(8px);
+}
