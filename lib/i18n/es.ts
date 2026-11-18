@@ -193,10 +193,10 @@ export const es: Dictionary = {
   },
   process: {
     title: "Empezar es una llamada.",
-    intro: "Sin contratos largos ni formularios eternos. Así trabajamos desde el primer día.",
+    intro: "Sin contratos largos ni formularios eternos. Así trabajo desde el primer día.",
     steps: [
       { title: "Llamada gratis", text: "30 minutos para conocer tu negocio, tus objetivos y ver si encajamos." },
-      { title: "Estrategia", text: "Te presento un plan claro: qué vamos a publicar, dónde y qué resultados buscamos." },
+      { title: "Estrategia", text: "Te presento un plan claro: qué voy a publicar, dónde y qué resultados quiero conseguir para ti." },
       { title: "Contenido", text: "Grabo, fotografío y diseño todo el contenido del mes, con tu aprobación." },
       { title: "Publicación y resultados", text: "Publico, gestiono la comunidad y te envío un informe cada mes." },
     ],
@@ -239,11 +239,11 @@ export const es: Dictionary = {
     items: [
       {
         q: "¿Cuánto cuesta?",
-        a: "Depende de lo que necesites: solo estrategia, contenido o la gestión completa. En la llamada gratis vemos tu caso y te paso un presupuesto cerrado, sin sorpresas.",
+        a: "Depende de lo que necesites: solo estrategia, contenido o la gestión completa. En la llamada gratis estudio tu caso y te paso un presupuesto cerrado, sin sorpresas.",
       },
       {
         q: "¿Hay permanencia?",
-        a: "No. Trabajamos mes a mes. Si no ves valor, lo dejas cuando quieras.",
+        a: "No. Trabajo mes a mes. Si no ves valor, lo dejas cuando quieras.",
       },
       {
         q: "¿Trabajas solo en mi ciudad?",
@@ -251,7 +251,7 @@ export const es: Dictionary = {
       },
       {
         q: "¿En qué redes trabajas?",
-        a: "Sobre todo Instagram, TikTok y Facebook, que es donde están los clientes de un negocio local. Si tu negocio necesita otra, lo vemos.",
+        a: "Sobre todo Instagram, TikTok y Facebook, que es donde están los clientes de un negocio local. Si tu negocio necesita otra, cuéntamelo y lo valoro.",
       },
       {
         q: "¿Cuándo veré resultados?",

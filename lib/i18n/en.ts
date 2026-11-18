@@ -193,10 +193,10 @@ export const en: Dictionary = {
   },
   process: {
     title: "Getting started is one call.",
-    intro: "No long contracts, no endless forms. This is how we work from day one.",
+    intro: "No long contracts, no endless forms. This is how I work from day one.",
     steps: [
       { title: "Free call", text: "30 minutes to get to know your business and your goals, and see if we're a fit." },
-      { title: "Strategy", text: "I present a clear plan: what we'll post, where, and the results we're after." },
+      { title: "Strategy", text: "I present a clear plan: what I'll post, where, and the results I'm aiming for." },
       { title: "Content", text: "I shoot, photograph and design the month's content, with your approval." },
       { title: "Publishing & results", text: "I publish, manage the community and send you a report every month." },
     ],
@@ -239,11 +239,11 @@ export const en: Dictionary = {
     items: [
       {
         q: "How much does it cost?",
-        a: "It depends on what you need: strategy only, content, or full management. On the free call we look at your case and I send you a fixed quote, with no surprises.",
+        a: "It depends on what you need: strategy only, content, or full management. On the free call I look at your case and send you a fixed quote, with no surprises.",
       },
       {
         q: "Is there a minimum contract?",
-        a: "No. We work month to month. If you don't see the value, you can stop whenever you like.",
+        a: "No. I work month to month. If you don't see the value, you can stop whenever you like.",
       },
       {
         q: "Do you only work in my city?",
@@ -251,7 +251,7 @@ export const en: Dictionary = {
       },
       {
         q: "Which platforms do you work on?",
-        a: "Mainly Instagram, TikTok and Facebook, which is where a local business's customers are. If yours needs another one, we'll look at it.",
+        a: "Mainly Instagram, TikTok and Facebook, which is where a local business's customers are. If yours needs another one, tell me and I'll look into it.",
       },
       {
         q: "When will I see results?",
