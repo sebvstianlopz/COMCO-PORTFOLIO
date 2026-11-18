@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "sf pro text",
+        "createdAt": "2026-11-18T01:54:39.543Z",
+        "reason": "Claude: system fallback stack inside the user-supplied glass-folder component; app/globals.css overrides .gf-root font-family with Funnel Sans"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "sf mono",
+        "createdAt": "2026-11-18T01:54:39.552Z",
+        "reason": "Claude: monospace fallback inside the user-supplied glass-folder component; app/globals.css overrides .gf-meta and .gf-sheet-meta with Funnel Sans"
+      }
+    ]
+  }
+}
