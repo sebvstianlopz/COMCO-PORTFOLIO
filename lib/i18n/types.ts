@@ -61,7 +61,8 @@ export type Dictionary = {
     note: string
     files: [string, string, string]
   }
-  proof: { title: string; stats: Stat[]; note: string }
+  /** Headline figures, shown as one line in the Work section. */
+  proof: { stats: Stat[]; note: string }
   services: {
     title: string
     intro: string

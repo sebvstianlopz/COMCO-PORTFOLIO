@@ -34,7 +34,6 @@ export const en: Dictionary = {
     files: ["Reel", "Carousel", "Story"],
   },
   proof: {
-    title: "Results you notice in the shop, not just on the screen.",
     stats: [
       { value: 3, suffix: "×", label: "more reach on average in 90 days" },
       { value: 40, suffix: "+", label: "local businesses supported" },

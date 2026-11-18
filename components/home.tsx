@@ -4,7 +4,6 @@ import { Booking } from "@/components/sections/booking"
 import { Faq } from "@/components/sections/faq"
 import { Hero } from "@/components/sections/hero"
 import { Process } from "@/components/sections/process"
-import { Proof } from "@/components/sections/proof"
 import { Services } from "@/components/sections/services"
 import { SiteFooter } from "@/components/sections/site-footer"
 import { SiteHeader } from "@/components/sections/site-header"
@@ -22,7 +21,6 @@ export function Home({ dict }: { dict: Dictionary }) {
       <SiteHeader dict={dict} />
       <main id="main">
         <Hero dict={dict} />
-        <Proof dict={dict} />
         <Services dict={dict} />
         <Work dict={dict} />
         <Process dict={dict} />

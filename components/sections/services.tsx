@@ -3,6 +3,7 @@
 import * as React from "react"
 import GlassFolder, { type FolderFile } from "@/components/ui/glass-folder-cards"
 import { BookButton } from "@/components/booking/book-button"
+import { Reveal } from "@/components/motion/reveal"
 import { useNear, useWidth } from "@/hooks/use-width"
 import { art } from "@/lib/art"
 import type { Dictionary, FolderItem, Service } from "@/lib/i18n/types"
@@ -31,20 +32,26 @@ export function Services({ dict }: { dict: Dictionary }) {
         >
           {s.title}
         </h2>
-        <p className="max-w-[46ch] text-lg leading-relaxed text-ink-soft">{s.intro}</p>
+        <div>
+          <p className="max-w-[46ch] text-lg leading-relaxed text-ink-soft">{s.intro}</p>
+          <p className="mt-4 text-[0.9375rem] text-ink">{s.hint}</p>
+        </div>
       </div>
 
-      <ul className="mt-20 grid gap-x-10 gap-y-24 md:mt-28 md:grid-cols-2 xl:grid-cols-3">
+      <ul className="mt-20 grid gap-x-10 gap-y-20 md:mt-28 md:grid-cols-2 xl:grid-cols-3">
         {s.services.map((service, i) => (
           <ServiceFolder key={service.id} service={service} index={i} dict={dict} />
         ))}
       </ul>
+
+      <Reveal className="mt-20 md:mt-24">
+        <BookButton lang={dict.lang}>{s.cta}</BookButton>
+      </Reveal>
     </section>
   )
 }
 
 function ServiceFolder({ service, index, dict }: { service: Service; index: number; dict: Dictionary }) {
-  const s = dict.services
   const [ref, width] = useWidth<HTMLDivElement>()
   const near = useNear(ref, "500px")
   const [open, setOpen] = React.useState(false)
@@ -67,6 +74,7 @@ function ServiceFolder({ service, index, dict }: { service: Service; index: numb
             action="none"
             width={width}
             appearDelay={index * 140}
+            className="folder-peek"
             open={open}
             onOpenChange={setOpen}
             onFileSelect={(_, i) => setSelected(i)}
@@ -103,22 +111,15 @@ function ServiceFolder({ service, index, dict }: { service: Service; index: numb
           ))}
         </ul>
 
-        <div id={detailId} aria-live="polite" className="mt-5 min-h-[6.5rem]">
+        <div id={detailId} aria-live="polite">
           {chosen ? (
-            <div key={chosen.name} className="animate-in fade-in-0 slide-in-from-bottom-1 duration-500">
-              <p className="text-[0.8125rem] text-ink-soft">{chosen.meta}</p>
-              <h3 className="mt-0.5 text-xl font-semibold tracking-[-0.02em]">{chosen.name}</h3>
+            <div key={chosen.name} className="mt-5 animate-in duration-500 fade-in-0 slide-in-from-bottom-1">
+              <h3 className="text-xl font-semibold tracking-[-0.02em]">
+                {chosen.name} <span className="text-base font-normal text-ink-soft">· {chosen.meta}</span>
+              </h3>
               <p className="mt-2 leading-relaxed text-ink/80">{chosen.detail}</p>
             </div>
-          ) : (
-            <p className="text-[0.9375rem] text-ink-soft">{s.hint}</p>
-          )}
-        </div>
-
-        <div className="mt-auto pt-6">
-          <BookButton lang={dict.lang} variant="glass" size="sm">
-            {s.cta}
-          </BookButton>
+          ) : null}
         </div>
       </div>
     </li>

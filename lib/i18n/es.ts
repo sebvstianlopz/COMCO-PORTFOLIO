@@ -34,7 +34,6 @@ export const es: Dictionary = {
     files: ["Reel", "Carrusel", "Historia"],
   },
   proof: {
-    title: "Resultados que se notan en el local, no solo en la pantalla.",
     stats: [
       { value: 3, suffix: "×", label: "más alcance de media en 90 días" },
       { value: 40, suffix: "+", label: "negocios locales acompañados" },

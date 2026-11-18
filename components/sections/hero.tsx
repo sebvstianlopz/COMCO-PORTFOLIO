@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CirclePlay, Layers, CircleDashed } from "lucide-react"
+import { ArrowDown, CirclePlay, Layers, CircleDashed } from "lucide-react"
 import { ArtCanvas } from "@/components/art-canvas"
 import { BookButton } from "@/components/booking/book-button"
 import { useSize } from "@/hooks/use-width"
@@ -186,7 +186,16 @@ export function Hero({ dict }: { dict: Dictionary }) {
                         {h.secondary}
                       </a>
                     </div>
-                    <p className="pl-1 text-[0.8125rem] text-ink-soft">{h.note}</p>
+                    <div className="flex items-center justify-between gap-4 pl-1">
+                      <p className="text-[0.8125rem] text-ink-soft">{h.note}</p>
+                      <a
+                        href={`#${sectionIds.services}`}
+                        className="inline-flex shrink-0 items-center gap-1 text-[0.9375rem] font-semibold underline-offset-4 hover:underline sm:hidden"
+                      >
+                        {h.secondary}
+                        <ArrowDown aria-hidden="true" className="size-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

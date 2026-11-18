@@ -29,7 +29,21 @@ export function Work({ dict }: { dict: Dictionary }) {
         >
           {w.title}
         </h2>
-        <p className="max-w-[46ch] text-lg leading-relaxed text-ink-soft">{w.intro}</p>
+        <div>
+          <p className="max-w-[46ch] text-lg leading-relaxed text-ink-soft">{w.intro}</p>
+          {/* the headline figures, as one line of evidence rather than a stats block */}
+          <p className="mt-6 max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink-soft">
+            {dict.proof.stats.map((st, i) => (
+              <span key={st.label}>
+                {i > 0 ? " · " : null}
+                <span className="font-semibold text-ink tabular-nums">
+                  {(st.prefix ?? "") + st.value + (st.suffix ?? "")}
+                </span>{" "}
+                {st.label}
+              </span>
+            ))}
+          </p>
+        </div>
       </Reveal>
 
       <ol className="mt-20 flex flex-col gap-24 md:mt-28 md:gap-32">
@@ -40,7 +54,7 @@ export function Work({ dict }: { dict: Dictionary }) {
 
       <Reveal className="mt-24 flex flex-col items-start gap-4 md:mt-32 md:flex-row md:items-center md:gap-6">
         <BookButton lang={dict.lang}>{w.cta}</BookButton>
-        <p className="text-[0.875rem] text-ink-soft">{w.note}</p>
+        <p className="text-[0.875rem] text-ink-soft">{w.note} {dict.proof.note}</p>
       </Reveal>
     </section>
   )
@@ -70,7 +84,8 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
               seed={index * 11 + 5}
               files={files}
               action="none"
-              labelPlacement={flip ? "top-left" : "bottom-left"}
+              labelPlacement="bottom-left"
+              className="folder-peek"
               width={width}
               open={open}
               onOpenChange={setOpen}
@@ -82,10 +97,10 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
       </div>
 
       <Reveal className={cn(flip && "md:order-1")}>
-        <p className="text-[0.875rem] text-ink-soft">{study.sector}</p>
-        <h3 className="mt-1 text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] font-semibold tracking-[-0.03em]">
+        <h3 className="text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.05] font-semibold tracking-[-0.03em]">
           {study.client}
         </h3>
+        <p className="mt-1 text-[0.9375rem] text-ink-soft">{study.sector}</p>
         <p className="mt-4 max-w-[42ch] text-lg leading-relaxed text-ink/80">{study.summary}</p>
 
         <dl className="mt-8 border-t border-white/10">
@@ -134,7 +149,7 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
           ))}
         </ul>
 
-        <div id={detailId} aria-live="polite" className="mt-4 min-h-[4.5rem]">
+        <div id={detailId} aria-live="polite" className="mt-4">
           {chosen ? (
             <p key={chosen.name} className="max-w-[48ch] animate-in leading-relaxed text-ink/80 duration-500 fade-in-0 slide-in-from-bottom-1">
               <span className="font-semibold text-ink">{chosen.name}.</span> {chosen.detail}
