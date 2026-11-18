@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils"
 /** Clients' words on smoked glass over COMCO's artwork, set at slightly different heights. */
 export function Testimonials({ dict }: { dict: Dictionary }) {
   const t = dict.testimonials
+  // nothing to show until COMCO supplies real reviews
+  if (t.items.length === 0) return null
   return (
     <section aria-labelledby="testimonials-title" className="pb-28 md:pb-40">
       <Reveal className="mx-auto max-w-[1360px] px-5 md:px-10">
@@ -41,7 +43,7 @@ export function Testimonials({ dict }: { dict: Dictionary }) {
           </ul>
         </div>
       </div>
-      <p className="mx-auto mt-6 max-w-[1360px] px-5 text-[0.875rem] text-ink-soft md:px-10">{t.note}</p>
+      {t.note ? <p className="mx-auto mt-6 max-w-[1360px] px-5 text-[0.875rem] text-ink-soft md:px-10">{t.note}</p> : null}
     </section>
   )
 }

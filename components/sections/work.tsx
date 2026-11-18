@@ -32,18 +32,20 @@ export function Work({ dict }: { dict: Dictionary }) {
         <div>
           <p className="max-w-[46ch] text-lg leading-relaxed text-ink-soft">{w.intro}</p>
           {/* the headline figures, as one line of evidence rather than a stats block */}
-          <p className="mt-6 max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink-soft">
-            {dict.proof.stats.map((st, i) => (
-              <span key={st.label}>
-                {i > 0 ? " · " : null}
-                <span className="font-semibold text-ink tabular-nums">
-                  {(st.prefix ?? "") + st.value + (st.suffix ?? "")}
-                </span>{" "}
-                {st.label}
-              </span>
-            ))}
-            <span className="mt-1 block text-[0.8125rem]">{dict.proof.note}</span>
-          </p>
+          {dict.proof.stats.length > 0 ? (
+            <p className="mt-6 max-w-[52ch] text-[0.9375rem] leading-relaxed text-ink-soft">
+              {dict.proof.stats.map((st, i) => (
+                <span key={st.label}>
+                  {i > 0 ? " · " : null}
+                  <span className="font-semibold text-ink tabular-nums">
+                    {(st.prefix ?? "") + st.value + (st.suffix ?? "")}
+                  </span>{" "}
+                  {st.label}
+                </span>
+              ))}
+              {dict.proof.note ? <span className="mt-1 block text-[0.8125rem]">{dict.proof.note}</span> : null}
+            </p>
+          ) : null}
         </div>
       </Reveal>
 
@@ -55,7 +57,7 @@ export function Work({ dict }: { dict: Dictionary }) {
 
       <Reveal className="mt-24 flex flex-col items-start gap-4 md:mt-32 md:flex-row md:items-center md:gap-6">
         <BookButton lang={dict.lang}>{w.cta}</BookButton>
-        <p className="text-[0.875rem] text-ink-soft">{w.note}</p>
+        {w.note ? <p className="text-[0.875rem] text-ink-soft">{w.note}</p> : null}
       </Reveal>
     </section>
   )
@@ -105,29 +107,31 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
         <p className="mt-1 text-[0.9375rem] text-ink-soft">{study.sector}</p>
         <p className="mt-4 max-w-[42ch] text-lg leading-relaxed text-ink/80">{study.summary}</p>
 
-        <dl className="mt-8 border-t border-white/10">
-          {study.metrics.map((m) => (
-            <div
-              key={m.label}
-              className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 border-b border-white/10 py-4"
-            >
-              <dt className="text-[0.9375rem] text-ink-soft">{m.label}</dt>
-              <dd className="flex items-baseline gap-3 tabular-nums">
-                <span className="text-[0.9375rem] text-ink-soft">
-                  <span className="sr-only">{w.before}: </span>
-                  {m.before}
-                </span>
-                <ArrowRight aria-hidden="true" className="size-4 self-center text-ink-soft" />
-                <span className="font-heading text-2xl font-semibold tracking-[-0.02em] text-ink">
-                  <span className="sr-only">{w.after}: </span>
-                  {m.after}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        {study.metrics.length > 0 ? (
+          <dl className="mt-8 border-t border-white/10">
+            {study.metrics.map((m) => (
+              <div
+                key={m.label}
+                className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 border-b border-white/10 py-4"
+              >
+                <dt className="text-[0.9375rem] text-ink-soft">{m.label}</dt>
+                <dd className="flex items-baseline gap-3 tabular-nums">
+                  <span className="text-[0.9375rem] text-ink-soft">
+                    <span className="sr-only">{w.before}: </span>
+                    {m.before}
+                  </span>
+                  <ArrowRight aria-hidden="true" className="size-4 self-center text-ink-soft" />
+                  <span className="font-heading text-2xl font-semibold tracking-[-0.02em] text-ink">
+                    <span className="sr-only">{w.after}: </span>
+                    {m.after}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
 
-        <ul className="mt-6 flex flex-wrap gap-2" aria-label={study.client}>
+        <ul className="mt-8 flex flex-wrap gap-2" aria-label={study.client}>
           {study.files.map((f, i) => (
             <li key={f.name}>
               <button
@@ -153,7 +157,10 @@ function CaseRow({ study, index, dict }: { study: CaseStudy; index: number; dict
 
         <div id={detailId} aria-live="polite" className="mt-4">
           {chosen ? (
-            <p key={chosen.name} className="max-w-[48ch] animate-in leading-relaxed text-ink/80 duration-500 fade-in-0 slide-in-from-bottom-1">
+            <p
+              key={chosen.name}
+              className="max-w-[48ch] animate-in leading-relaxed text-ink/80 duration-500 fade-in-0 slide-in-from-bottom-1"
+            >
               <span className="font-semibold text-ink">{chosen.name}.</span> {chosen.detail}
             </p>
           ) : null}
