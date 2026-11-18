@@ -35,7 +35,7 @@ Clients, figures and testimonials in the copy files are examples and must be rep
 
 ## Deploy
 
-`npm run build` writes a complete static site to `out/`. Upload the contents of `out/` to any static host: Hostinger (public_html), Cloudflare Pages or GitHub Pages. No server is needed.
+`npm run build` writes a complete static site to `out/`. Upload the contents of `out/` to any static web host. No server is needed.
 
 ## Why `components/ui`
 

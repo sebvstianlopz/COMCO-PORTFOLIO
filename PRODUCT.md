@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Next.js (App Router) with TypeScript, Tailwind CSS v4 and shadcn/ui, exported as a static site (`out/`). Chosen by the user once they supplied the glass-folder React component. Spanish at `/` (default), English at `/en/`. Hosting is undecided; the static output runs on Hostinger, Cloudflare Pages or GitHub Pages.
+Next.js (App Router) with TypeScript, Tailwind CSS v4 and shadcn/ui, exported as a static site (`out/`). Chosen by the user once they supplied the glass-folder React component. Spanish at `/` (default), English at `/en/`. Hosting is undecided; the static output runs on any static host.
 
 ## Users
 
