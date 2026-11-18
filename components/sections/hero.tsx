@@ -85,7 +85,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
       ref={sectionRef}
       id="inicio"
       aria-labelledby="hero-title"
-      className="group/hero relative h-[100svh] min-h-[620px] md:min-h-[700px] p-2.5 md:p-4 [--hx:0] [--hy:0]"
+      className="group/hero relative h-[100svh] min-h-[560px] md:min-h-[700px] p-2.5 md:p-4 [--hx:0] [--hy:0]"
     >
       {/* back panel: COMCO's liquid artwork */}
       <div
@@ -170,27 +170,29 @@ export function Hero({ dict }: { dict: Dictionary }) {
                 <span className="hidden truncate text-[0.8125rem] text-ink-soft sm:inline">{h.tabMeta}</span>
               </div>
 
-              <div className="relative px-5 pt-6 pb-6 md:px-10 md:pt-12 md:pb-10 lg:px-14">
+              <div className="relative px-5 pt-5 pb-5 md:px-10 md:pt-12 md:pb-10 lg:px-14">
                 <h1
                   id="hero-title"
                   className="max-w-[11ch] text-[clamp(2.6rem,8.4vw,6rem)] leading-[0.94] font-semibold tracking-[-0.04em]"
                 >
                   {h.title}
                 </h1>
-                <div className="mt-5 flex flex-col gap-5 md:mt-10 md:gap-7 lg:flex-row lg:items-end lg:justify-between">
+                <div className="mt-4 flex flex-col gap-4 md:mt-10 md:gap-7 lg:flex-row lg:items-end lg:justify-between">
                   <p className="max-w-[44ch] text-base leading-relaxed text-ink/80 md:text-lg">{h.lead}</p>
                   <div className="flex flex-col gap-3">
                     <div className="flex flex-wrap items-center gap-2.5">
-                      <BookButton lang={dict.lang}>{h.primary}</BookButton>
+                      <BookButton lang={dict.lang} className="max-w-full whitespace-normal text-left max-[380px]:px-5 max-[380px]:text-[0.9375rem]">
+                        {h.primary}
+                      </BookButton>
                       <a href={`#${sectionIds.services}`} className="pill pill-glass max-sm:hidden">
                         {h.secondary}
                       </a>
                     </div>
-                    <div className="flex items-center justify-between gap-4 pl-1">
-                      <p className="text-[0.8125rem] text-ink-soft">{h.note}</p>
+                    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 pl-1">
+                      <p className="text-[0.75rem] whitespace-nowrap text-ink-soft sm:text-[0.8125rem]">{h.note}</p>
                       <a
                         href={`#${sectionIds.services}`}
-                        className="inline-flex shrink-0 items-center gap-1 text-[0.9375rem] font-semibold underline-offset-4 hover:underline sm:hidden"
+                        className="inline-flex shrink-0 items-center gap-1 text-[0.875rem] font-semibold underline-offset-4 hover:underline sm:hidden"
                       >
                         {h.secondary}
                         <ArrowDown aria-hidden="true" className="size-4" />

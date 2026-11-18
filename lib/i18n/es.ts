@@ -58,15 +58,15 @@ export const es: Dictionary = {
         outcome: "Sabes qué publicar, cuándo y por qué, con objetivos que se pueden medir.",
         files: [
           {
-            name: "Auditoría de perfil",
-            meta: "Inicio",
-            detail: "Reviso tus perfiles, tu competencia y tu audiencia para ver qué funciona, qué no y dónde está la oportunidad.",
-          },
-          {
             name: "Plan de contenidos",
             meta: "Mensual",
             art: "cobalt",
             detail: "Un calendario con temas, formatos y fechas, pensado alrededor de lo que tu negocio necesita vender.",
+          },
+          {
+            name: "Auditoría de perfil",
+            meta: "Inicio",
+            detail: "Reviso tus perfiles, tu competencia y tu audiencia para ver qué funciona, qué no y dónde está la oportunidad.",
           },
           {
             name: "Informe de resultados",
@@ -110,6 +110,12 @@ export const es: Dictionary = {
         outcome: "Tus redes funcionan cada semana sin que tengas que tocarlas.",
         files: [
           {
+            name: "Seguimiento",
+            meta: "Mensual",
+            art: "plum",
+            detail: "Una reunión al mes para revisar resultados y ajustar el plan. Tú decides, yo ejecuto.",
+          },
+          {
             name: "Comunidad",
             meta: "Diario",
             detail: "Respondo comentarios y mensajes con tu tono, para que ninguna consulta de un cliente se quede sin respuesta.",
@@ -118,12 +124,6 @@ export const es: Dictionary = {
             name: "Publicación",
             meta: "Semanal",
             detail: "Programo y publico todo en el mejor momento, en Instagram, TikTok y Facebook.",
-          },
-          {
-            name: "Seguimiento",
-            meta: "Mensual",
-            art: "plum",
-            detail: "Una reunión al mes para revisar resultados y ajustar el plan. Tú decides, yo ejecuto.",
           },
         ],
       },

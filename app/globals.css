@@ -153,8 +153,8 @@
 }
 /* At rest, let the files' top edges show above the glass so a folder invites the touch. */
 .gf-root.folder-peek:not(:hover):not(:focus-within):not([data-open]) {
-  --gf-lift: 4px;
-  --gf-stack: 13px;
+  --gf-lift: -6px;
+  --gf-stack: 14px;
 }
 .gf-root .gf-sheet:focus-visible {
   outline-color: var(--signal) !important;

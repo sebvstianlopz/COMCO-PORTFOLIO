@@ -58,15 +58,15 @@ export const en: Dictionary = {
         outcome: "You know what to post, when and why, with goals you can measure.",
         files: [
           {
-            name: "Profile audit",
-            meta: "Kick-off",
-            detail: "I review your profiles, your competitors and your audience to see what works, what doesn't and where the opportunity is.",
-          },
-          {
             name: "Content plan",
             meta: "Monthly",
             art: "cobalt",
             detail: "A calendar of topics, formats and dates, built around what your business needs to sell.",
+          },
+          {
+            name: "Profile audit",
+            meta: "Kick-off",
+            detail: "I review your profiles, your competitors and your audience to see what works, what doesn't and where the opportunity is.",
           },
           {
             name: "Results report",
@@ -110,6 +110,12 @@ export const en: Dictionary = {
         outcome: "Your social media runs every week without you having to touch it.",
         files: [
           {
+            name: "Check-ins",
+            meta: "Monthly",
+            art: "plum",
+            detail: "One meeting a month to review results and adjust the plan. You decide, I deliver.",
+          },
+          {
             name: "Community",
             meta: "Daily",
             detail: "I reply to comments and messages in your voice, so no customer question goes unanswered.",
@@ -118,12 +124,6 @@ export const en: Dictionary = {
             name: "Publishing",
             meta: "Weekly",
             detail: "I schedule and publish everything at the best time, on Instagram, TikTok and Facebook.",
-          },
-          {
-            name: "Check-ins",
-            meta: "Monthly",
-            art: "plum",
-            detail: "One meeting a month to review results and adjust the plan. You decide, I deliver.",
           },
         ],
       },

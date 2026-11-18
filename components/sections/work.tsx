@@ -42,6 +42,7 @@ export function Work({ dict }: { dict: Dictionary }) {
                 {st.label}
               </span>
             ))}
+            <span className="mt-1 block text-[0.8125rem]">{dict.proof.note}</span>
           </p>
         </div>
       </Reveal>
@@ -54,7 +55,7 @@ export function Work({ dict }: { dict: Dictionary }) {
 
       <Reveal className="mt-24 flex flex-col items-start gap-4 md:mt-32 md:flex-row md:items-center md:gap-6">
         <BookButton lang={dict.lang}>{w.cta}</BookButton>
-        <p className="text-[0.875rem] text-ink-soft">{w.note} {dict.proof.note}</p>
+        <p className="text-[0.875rem] text-ink-soft">{w.note}</p>
       </Reveal>
     </section>
   )
