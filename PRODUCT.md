@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Astro (static output) with plain CSS design tokens, GSAP + ScrollTrigger and Lenis for motion. Built-in Astro i18n routing: Spanish at `/` (default), English at `/en/`. Hosting is undecided (the output is static so it can go to Hostinger, Cloudflare Pages or GitHub Pages later).
+Next.js (App Router) with TypeScript, Tailwind CSS v4 and shadcn/ui, exported as a static site (`out/`). Chosen by the user once they supplied the glass-folder React component. Spanish at `/` (default), English at `/en/`. Hosting is undecided; the static output runs on Hostinger, Cloudflare Pages or GitHub Pages.
 
 ## Users
 
